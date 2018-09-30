@@ -264,9 +264,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 919702767}
-  - component: {fileID: 919702766}
   - component: {fileID: 919702768}
   - component: {fileID: 919702769}
+  - component: {fileID: 919702770}
   m_Layer: 0
   m_Name: Mgr
   m_TagString: Untagged
@@ -274,18 +274,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &919702766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 919702765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5491e894d8af3cd4d84f37e86fad6799, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  luaScript: {fileID: 4900000, guid: cb17cf8001b5dee42b5c880c20a69104, type: 3}
 --- !u!4 &919702767
 Transform:
   m_ObjectHideFlags: 0
@@ -323,3 +311,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   luaScript: {fileID: 4900000, guid: 6f5aa903f05dffd46822085f93b2102f, type: 3}
+--- !u!114 &919702770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 919702765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8bbcfb854c66244871de036e2837a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luaScript: {fileID: 4900000, guid: 75b818cad93f21f438b0cae354e89c33, type: 3}
