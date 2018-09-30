@@ -1,0 +1,35 @@
+﻿
+--xlua需要把文件放在同一个文件夹
+--先引用require("LoadingHelp")
+--直接调用LoadInStreamingAsset()
+
+bundles = {};
+--加载一个bundle
+function LoadBundleInPersistent(bundleName,littleName,objType)
+
+    local bundle = nil;
+
+    if (bundles[bundleName]) then
+        bundle = bundles[bundleName];
+    else
+        local path = CS.UnityEngine.Application.persistentDataPath.."/Bundle/"..bundleName;
+        bundle = CS.UnityEngine.AssetBundle.LoadFromFile(path);
+
+        if (bundle == nil) then
+            print("bundle is null");
+        end
+        bundles[bundleName] = bundle;
+    end
+
+    local o = bundle:LoadAsset(littleName,typeof(objType));
+
+    return o;
+
+end
+--卸载一个bundle
+function BundleUnload(bundleName)
+    if bundles[bundleName] then
+        bundles[bundleName]:Unload(false);
+    end
+end
+

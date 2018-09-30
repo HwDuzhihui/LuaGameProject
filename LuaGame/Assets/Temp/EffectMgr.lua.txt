@@ -1,0 +1,20 @@
+﻿
+function awake()
+
+end
+
+
+function start()
+
+end
+
+
+function update()
+
+end
+
+
+function ondestroy()
+
+end
+

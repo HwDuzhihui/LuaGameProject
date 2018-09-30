@@ -1,0 +1,10 @@
+﻿
+function awake()
+
+    xlua.hotfix(CS.LuaMgr,'Update',update);
+
+end
+
+function update()
+    print("LuaUpdate");
+end

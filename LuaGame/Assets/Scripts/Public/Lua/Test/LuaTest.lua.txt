@@ -1,0 +1,118 @@
+
+
+--声明变量组件需要用local
+local button_Button;
+--值--可以不用local
+local m1 = 5;
+m2 = 6;
+mBool = false;
+mString = "stringTest";
+mTable = {4,5,6};
+
+
+function awake()
+	Init();
+end
+function start()
+end
+function update()
+end
+function ondestroy()
+end
+
+
+
+function Init()
+    --本物体查找
+    --button_Button = self:GetComponent("Button");
+    --子节点查找
+    button_Button = self.transform:Find("Button"):GetComponent("Button");
+    --注册回调
+    button_Button.onClick:AddListener(function()
+        --print("BtnClick Lua2");
+        OnButtonClicked();
+    end)
+
+    funcTest0 = BackFunction();
+    print(funcTest0);
+    ManyParm(1,2,3);
+    VariableFunction(1,2,"string");
+    for i = 1, #arrayString do
+        print("arrayString ",i,"=",arrayString[i]);
+    end
+    --遍历字典
+    for key ,value in pairs(dictionaryTest) do
+        print("pairs dictionaryTest",key.. " : " ..value);
+    end
+    --for key ,value in pairs(arrayString) do
+    --    print("pairs arrayString",key.. " : " ..value);
+    --end
+    --遍历数组
+    for key ,value in ipairs(arrayString) do
+        print("ipairs arrayString",key.." : "..value)
+    end
+    dicValue0 = dictionaryTest["c"];
+    dicValue1 = dictionaryTest2["mm"];
+    print(dicValue0,dicValue1);
+    --判断
+    a0 = 5;
+    a1 = 10;
+    if a0 < 10 then
+        print("<<<");
+    elseif a0 > 10 then
+        print(">>>");
+    else
+        print("===");
+    end
+    --while循环
+    sum = 5;
+    while sum < 5 do
+        sum = sum + 1;
+    end
+    --for循环
+    for sum = 0,5,2 do
+        print(sum);
+    end
+    --按位与，按位或
+    bool1 = a0 > 5 and a1 > 10;
+    bool2 = a0 > 5 or a1 > 10;
+    --同时赋值
+    num0,num1,num2 = 123 ,"abc",false;
+
+
+end
+function OnButtonClicked()
+    print("BtnClick Lua2");
+end
+
+--返回函数
+function BackFunction()
+    return 5;
+    --return 1 > 2;
+    --return "stringTest";
+end
+--多个参,形参不足自动补nil
+function ManyParm(a,b,c,d)
+    t = a + b;
+    print("t = ",t);
+end
+--可变参
+function VariableFunction(...)
+    local arrayTest = {...};
+
+    for i = 1, #arrayTest do
+        print("arrayTest",i," = ", arrayTest[i]);
+    end
+end
+--数据结构
+--数组（1开始）
+arrayString = {"stringA","stringB","stringC"};
+--字典,（key只能是字符串,不能加引号，可以通过dictionaryTest["a"]访问）
+dictionaryTest = {a ="周一",b ="周二",c = 12};
+--字典（没有key时会被当成数组dictionaryTest2[1] = 10 dictionaryTest2[2] = 30,mm = 20会被跳过 dictionaryTest2["mm"] = 20）
+dictionaryTest2 = {10,mm = 20,30};
+
+
+
+--操作
+--Ctrl B  跳转到实现

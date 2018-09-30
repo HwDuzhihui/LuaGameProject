@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 4168539816
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: audioprefab.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: lua.unity3d
+      Dependencies: {}

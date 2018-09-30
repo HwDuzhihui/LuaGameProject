@@ -1,0 +1,60 @@
+﻿
+
+bgmSwitch = true;
+soundSwitch = true;
+soundDictionary = {};
+
+function awake()
+
+end
+
+
+function start()
+    Pool(1,2,3);
+end
+
+
+function Pool(...)
+
+    local arrayId = {...};
+
+    local soundconfig = require("SoundConfig")
+    require("LoadingHelp");
+    require("SoundController");
+
+    for i = 1, #arrayId do
+
+        local littleName = soundconfig[arrayId[i]]["soundpath"];
+        local soundId = soundconfig[arrayId[i]]["soundid"];
+        local poolNumber = soundconfig[arrayId[i]]["poolnumber"];
+
+        local o = LoadBundleInPersistent("audioprefab.unity3d",littleName,CS.UnityEngine.GameObject);
+        local luaScript = LoadBundleInPersistent("lua.unity3d","soundcontroller.lua",CS.UnityEngine.Object);
+
+        --print(luaScript);
+        --缓存个数
+        for i = 1, poolNumber do
+            local obj = CS.UnityEngine.GameObject.Instantiate(o);
+            local mono = obj:AddComponent(typeof(CS.LuaBehaviourMono));
+            mono:LoadLuaAsset(luaScript);
+            if soundDictionary[soundId] == nil then
+                soundArray = {mono};
+                soundDictionary[soundId] = soundArray;
+            else
+                table.insert(soundDictionary[soundId],mono)
+            end
+
+            --mono.scriptEnv:
+            --Init(arrayId[i]);
+            --mono.scriptEnv:Init(arrayId[i]);
+            --mono.scriptEnv:Play();
+        end
+
+    end
+
+
+    --soundDictionary[1][1].Play();
+
+    --print(sound[2]["soundpath"]);
+end
+

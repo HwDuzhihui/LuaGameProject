@@ -1,0 +1,81 @@
+﻿
+local soundMgr = require("SoundMgr");
+local soundConfig = require("SoundConfig");
+
+--这里都可以配表
+local audioSource;
+local id;
+local maxVolume = 1;
+local tweenTime;
+local tweenVolume;
+local isBgm;
+local isPause = false;
+
+local endAction;
+
+--静音
+function Mute(mute)
+    audioSource.mute = mute;
+end
+--暂停
+function Pause()
+    audioSource:Pause();
+end
+--继续
+function UnPause()
+    audioSource:UnPause();
+end
+--正在播放
+function IsPlaying()
+    return audioSource.isPlaying;
+end
+
+--播放
+function Play()
+
+    if isBgm then
+        Mute(soundMgr.bgmSwitch)
+    else
+        Mute(soundMgr.soundSwitch);
+    end
+
+    if audioSource.isPlaying then
+        audioSource:Stop();
+    end
+
+    audioSource:Play();
+
+    --if(_action) then
+    --    local util = require("xlua.util");
+    --    yietFunc = function(self)
+    --        return util.cs_generator(function ()
+    --            while audioSource.isPlaying do
+    --                coroutine.yield(CS.UnityEngine.WaitForSecond(0.2));
+    --            end
+    --        end)
+    --    end
+    --end
+
+end
+
+
+
+
+function Init(_id)
+    if audioSource == nil then
+
+        audioSource = self.transform:GetComponent("AudioSource");
+
+        if (audioSource ~= nil) then
+            print("有值");
+        end
+
+        local info = soundConfig[_id];
+
+        id = _id;
+        isBgm = info.isbgm;
+        maxVolume = audioSource.volume;
+        tweenTime = 0.5;
+
+    end
+end
