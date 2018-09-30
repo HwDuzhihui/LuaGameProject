@@ -1,0 +1,5 @@
+table
+setting
+checking
+load record path file.//excel//音效表.xls
+add table SoundConfig

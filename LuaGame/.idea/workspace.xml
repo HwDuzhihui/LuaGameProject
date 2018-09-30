@@ -97,8 +97,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Lua/Resources/GameMgr.lua.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="3" />
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
@@ -143,7 +143,7 @@
       <path value="$PROJECT_DIR$/docs/source/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="171" />
     <option name="y" value="66" />
     <option name="width" value="1400" />
@@ -283,15 +283,15 @@
       <workItem from="1538183617461" duration="20550000" />
       <workItem from="1538270518551" duration="1201000" />
       <workItem from="1538290919786" duration="607000" />
-      <workItem from="1538293331693" duration="2193000" />
+      <workItem from="1538293331693" duration="2194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44852000" />
+    <option name="totallyTimeSpent" value="44853000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="171" y="66" width="1400" height="1000" extended-state="0" />
+    <frame x="171" y="66" width="1400" height="1000" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26492536" />
@@ -408,8 +408,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Lua/Resources/GameMgr.lua.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="3" />
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>

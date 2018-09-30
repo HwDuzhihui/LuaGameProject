@@ -1,0 +1,3 @@
+local GTableCheck = {
+}
+ return GTableCheck
