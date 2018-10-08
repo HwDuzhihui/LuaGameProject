@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using UnityEditor;
+
 
 public class ScreenPhoto : MonoBehaviour {
+
+#if UNITY_EDITOR
 
     KeyCode key = KeyCode.W;
 
 	
 	void Update()
-    {
-		
+    {		
         if(Input.GetKeyDown(key))
         {
             Capture();
         }
 	}
 
-
-    [MenuItem("EasyCodeEditor/截图")]
+    [UnityEditor.MenuItem("EasyCodeEditor/截图")]
     public static void Capture()
     {
         int name = Random.Range(0, 10000);
@@ -35,5 +35,7 @@ public class ScreenPhoto : MonoBehaviour {
         ScreenCapture.CaptureScreenshot(file);
         Debug.Log(file);
     }
+
+#endif
 
 }

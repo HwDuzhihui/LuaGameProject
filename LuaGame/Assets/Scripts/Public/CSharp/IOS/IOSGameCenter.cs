@@ -58,13 +58,21 @@ public class IOSGameCenter : MonoBehaviour
 #endif
     }
 
-
+#if UNITY_IOS
     //初始化购买对象
     [DllImport("__Internal")]
     static extern void initByUnity();
     //请求购买商品
     [DllImport("__Internal")]
     static extern void requestProductData(string url);
+    //恢复购买
+    [DllImport("__Internal")]
+    static extern void restoreProductData();
+    //请求好评
+    [DllImport("__Internal")]
+    static extern void RequestNice();
+#endif
+
     public static void BuySomething(string url)
     {
 #if UNITY_IOS
@@ -72,9 +80,6 @@ public class IOSGameCenter : MonoBehaviour
         requestProductData(url);
 #endif
     }
-    //恢复购买
-    [DllImport("__Internal")]
-    static extern void restoreProductData();
     public static void RestoreBuy()
     {
 #if UNITY_IOS
@@ -84,11 +89,6 @@ public class IOSGameCenter : MonoBehaviour
     }
 
 
-
-
-    //请求好评
-    [DllImport("__Internal")]
-    static extern void RequestNice();
     public static void SendRequestNice()
     {
 #if UNITY_IOS

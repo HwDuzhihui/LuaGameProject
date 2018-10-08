@@ -65,6 +65,7 @@ public class CreateBundle : MonoBehaviour {
         }
         catch (Exception e)
         {
+            Debug.Log(e.Message);
             throw;
         }
     }

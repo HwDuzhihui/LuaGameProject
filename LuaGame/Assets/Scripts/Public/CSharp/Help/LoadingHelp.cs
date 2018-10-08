@@ -6,6 +6,9 @@ using System;
 
 public class LoadingHelp : MonoBehaviour {
 
+    //封装一下
+    public bool resourcesStreaming = true;
+
 
     public Dictionary<string, AssetBundle> bundles = new Dictionary<string, AssetBundle>();
 
@@ -49,5 +52,7 @@ public class LoadingHelp : MonoBehaviour {
             }
         }
     }
+
+
 
 }

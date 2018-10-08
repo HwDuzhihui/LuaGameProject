@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class SoundController : MonoBehaviour {
 
-    AudioSource audio;
+    new AudioSource audio;
     public int poolNum = 1;              //缓存个数
     public int id;                       //id
     public float maxVolum = 1;           //最大音量
@@ -110,13 +110,13 @@ public class SoundController : MonoBehaviour {
         if (tweenVolume != null)
             if (tweenVolume.IsPlaying())
                 tweenVolume.Kill();
-        Tween tween = DOTween.To(() => Volume, r => Volume = r, maxVolum, tweenTime);
+        tweenVolume = DOTween.To(() => Volume, r => Volume = r, maxVolum, tweenTime);
     }
     public void FadeMin(float min = 0.2f)
     {
         if (tweenVolume != null)
             if (tweenVolume.IsPlaying())
                 tweenVolume.Kill();
-        Tween tween = DOTween.To(() => Volume, r => Volume = r, min, tweenTime);
+        tweenVolume = DOTween.To(() => Volume, r => Volume = r, min, tweenTime);
     }
 }

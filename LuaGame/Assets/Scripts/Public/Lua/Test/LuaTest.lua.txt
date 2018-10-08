@@ -129,5 +129,26 @@ dictionaryTest2 = {10,mm = 20,30};
 print("dictionaryTest.a的vaule = "..dictionaryTest.a);
 
 
+--词法定界
+--内函数访问外部函数的局部变量
+function learnaction()
+    --index就是内嵌函数returnfunc的upvalue
+    local index = 1;
+    return function()
+        index = index + 10;
+        return index;
+    end
+end
+--闭包
+--调用一个内部函数持有upvalue的函数产生的实例对象
+--upvalue各自独立，每调用一次就会产生一个新的闭包，重复调用会记住上一次的值
+action0 = learnaction();
+action1 = learnaction();
+print(action0());
+print(action0());
+print(action0());
+print(action1());
+
+
 --操作
 --Ctrl B  跳转到实现

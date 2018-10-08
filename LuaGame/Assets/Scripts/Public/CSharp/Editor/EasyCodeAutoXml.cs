@@ -21,7 +21,7 @@ public class EasyCodeAutoXml : Editor {
     static string split = "_";
 
 
-    [MenuItem("EasyCodeEditor/Create Xml Code")]
+    [MenuItem("EasyCodeEditor/创建xml解析文件")]
     public static void CreateCode()
     {
         DirectoryInfo direction = new DirectoryInfo(m_XmlFile);

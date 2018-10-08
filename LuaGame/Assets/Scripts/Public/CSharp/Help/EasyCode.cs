@@ -152,6 +152,7 @@ public class EasyCode : MonoBehaviour {
             }
             catch (System.Exception ex)
             {
+                Debug.Log(ex.Message);
                 throw new System.Exception("类型不对");
             }
         }

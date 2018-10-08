@@ -6,13 +6,13 @@ using System.IO;
 
 public class EasyCodeEditor : MonoBehaviour {
 
-    [MenuItem("EasyCodeEditor/Delete All Prefs")]
+    [MenuItem("EasyCodeEditor/删档")]
     public static void DeleteAll()
     {
         PlayerPrefs.DeleteAll();
     }
 
-    [MenuItem("EasyCodeEditor/Make Audio Prefab")]
+    [MenuItem("EasyCodeEditor/制作声音预制体")]
     public static void RePlaceImage()
     {
         string prefabPath = "Assets/Resources/AudioPrefab/";
@@ -46,7 +46,7 @@ public class EasyCodeEditor : MonoBehaviour {
     //把文件拷到工程里
     static string filePath = "E:\\LuaGameProject\\excelToProtobuf\\tool\\lua\\";
     static string projectPath = "E:\\LuaGameProject\\LuaGame\\Assets\\Scripts\\Lua\\Resources\\";
-    [MenuItem("EasyCodeEditor/把数据拷到工程")]
+    [MenuItem("EasyCodeEditor/把lua数据拷到工程")]
     public static void MoveLuaFile()
     {
         if (!Directory.Exists(filePath))
@@ -56,7 +56,8 @@ public class EasyCodeEditor : MonoBehaviour {
         }
         if (!Directory.Exists(projectPath))
         {
-            Debug.Log("没有 " + projectPath);
+            //Debug.Log("没有 " + projectPath);
+            Directory.CreateDirectory(projectPath);
             return;
         }
 
