@@ -34,6 +34,10 @@ public class CreateBundle : MonoBehaviour {
         AssetDatabase.Refresh();
 
         Debug.Log(outPutPersistent);
+
+
+        
+
     }
 
     /// <summary>
