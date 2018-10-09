@@ -8,6 +8,7 @@ public class RandomMap : MonoBehaviour {
 
     /// <summary>
     /// 地图基本类型
+    /// 0,地板
     /// </summary>
     public GameObject[] worldItem;
     /// <summary>
@@ -29,7 +30,8 @@ public class RandomMap : MonoBehaviour {
     /// </summary>
     public void CreateWorld()
     {
-        //山峦规则
+        //平地,最底的一层,其他的河流山峦等都在上面
+        Instantiate(worldItem[0]);
     }
 	
 }
